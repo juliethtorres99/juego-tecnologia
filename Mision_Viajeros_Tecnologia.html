@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>🚀 Misión Tecnología Completa PRO</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#050816;
+color:white;
+overflow:hidden;
+}
+
+.screen{
+display:none;
+height:100vh;
+width:100%;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.active{display:flex;}
+
+.box{
+background:rgba(255,255,255,0.08);
+padding:12px;
+border-radius:12px;
+max-width:800px;
+margin:10px;
+}
+
+.card{
+background:white;
+color:black;
+padding:12px;
+margin:6px;
+border-radius:10px;
+cursor:pointer;
+min-width:230px;
+font-weight:bold;
+}
+
+button{
+padding:10px 15px;
+margin:5px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#facc15;
+font-weight:bold;
+}
+
+.row{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.selected{border:3px solid #38bdf8;}
+
+.score{margin:10px;font-size:18px;}
+</style>
+</head>
+
+<body>
+
+<!-- ================= INICIO ================= -->
+<div id="inicio" class="screen active">
+<h1>🚀 Misión Tecnología Completa</h1>
+<p>Explora los 5 cambios tecnológicos del mundo</p>
+<button onclick="go('a1')">🎮 Empezar</button>
+</div>
+
+<!-- ================= 1 ALIMENTACIÓN ================= -->
+<div id="a1" class="screen">
+<h2>🍎 Alimentación - Explicación</h2>
+<div class="box">
+Antes: alimentos naturales 🌽<br>
+Ahora: procesados 🍔 con tecnología alimentaria
+</div>
+<button onclick="go('a2')">➡ Nivel 1</button>
+</div>
+
+<div id="a2" class="screen">
+<h2>🍎 Nivel 1 - Difícil</h2>
+
+<div class="card" onclick="ok(this,1)">🥗 Alimento equilibrado</div>
+<div class="card" onclick="bad(this)">🍟 Alto en grasa</div>
+<div class="card" onclick="bad(this)">🥤 Azúcar líquida</div>
+<div class="card" onclick="ok(this,1)">🍎 Fruta natural real</div>
+
+<button onclick="go('a3')">➡ Emparejar</button>
+</div>
+
+<div id="a3" class="screen">
+<h2>🍎 Nivel 2 - Emparejar REAL</h2>
+
+<div class="row">
+<div class="card" onclick="pair(this,'nat')">🌽 Maíz sin procesar</div>
+<div class="card" onclick="pair(this,'pro')">🍔 Comida rápida</div>
+<div class="card" onclick="pair(this,'nat')">🥕 Cultivo natural</div>
+<div class="card" onclick="pair(this,'pro')">🍕 Ultraprocesado</div>
+<div class="card" onclick="pair(this,'pro')">🍩 Industria dulce</div>
+<div class="card" onclick="pair(this,'nat')">🍎 Orgánico real</div>
+</div>
+
+<button onclick="go('a4')">➡ Nivel 3</button>
+</div>
+
+<div id="a4" class="screen">
+<h2>🍎 Nivel 3 - Trampa</h2>
+
+<div class="card" onclick="ok(this,1)">🥗 Mejor opción nutricional</div>
+<div class="card" onclick="bad(this)">🍔 Procesado frecuente</div>
+<div class="card" onclick="bad(this)">🍟 Alto en grasa</div>
+<div class="card" onclick="bad(this)">🥤 Azúcar alta</div>
+
+<button onclick="go('a5')">➡ Nivel 4</button>
+</div>
+
+<div id="a5" class="screen">
+<h2>🍎 Nivel 4 - Razonamiento</h2>
+
+<div class="card" onclick="ok(this,1)">🥗 Tecnología + salud equilibrada</div>
+<div class="card" onclick="bad(this)">🍔 Solo ultraprocesado</div>
+
+<button onclick="go('v1')">➡ Siguiente</button>
+</div>
+
+<!-- ================= 2 VESTIMENTA ================= -->
+<div id="v1" class="screen">
+<h2>👕 Vestimenta - Explicación</h2>
+<div class="box">
+Antes ropa artesanal 🧵 ahora producción industrial 🏭
+</div>
+<button onclick="go('v2')">➡ Nivel 1</button>
+</div>
+
+<div id="v2" class="screen">
+<h2>👕 Nivel 1</h2>
+
+<div class="card" onclick="ok(this,2)">🪶 Tradicional real</div>
+<div class="card" onclick="bad(this)">📱 Tecnología</div>
+<div class="card" onclick="bad(this)">🚗 Transporte</div>
+<div class="card" onclick="ok(this,2)">🧵 Hecho a mano</div>
+
+<button onclick="go('v3')">➡ Emparejar</button>
+</div>
+
+<div id="v3" class="screen">
+<h2>👕 Nivel 2 - Emparejar</h2>
+
+<div class="row">
+<div class="card" onclick="pair(this,'man')">🧵 Artesanal</div>
+<div class="card" onclick="pair(this,'ind')">🏭 Industrial</div>
+<div class="card" onclick="pair(this,'man')">🪶 Manual</div>
+<div class="card" onclick="pair(this,'ind')">👗 Producción masiva</div>
+<div class="card" onclick="pair(this,'ind')">🧥 Máquina textil</div>
+<div class="card" onclick="pair(this,'man')">🧶 Tradicional</div>
+</div>
+
+<button onclick="go('v4')">➡ Nivel 3</button>
+</div>
+
+<div id="v4" class="screen">
+<h2>👕 Nivel 3</h2>
+
+<div class="card" onclick="ok(this,2)">👗 Evolución tecnológica</div>
+<div class="card" onclick="bad(this)">🚗 Transporte</div>
+<div class="card" onclick="bad(this)">📱 Redes sociales</div>
+
+<button onclick="go('v5')">➡ Nivel 4</button>
+</div>
+
+<div id="v5" class="screen">
+<h2>👕 Nivel 4</h2>
+
+<div class="card" onclick="ok(this,2)">👗 Tecnología en textiles</div>
+<div class="card" onclick="bad(this)">🪨 Sin cambio</div>
+
+<button onclick="go('c1')">➡ Siguiente</button>
+</div>
+
+<!-- ================= 3 COMUNICACIÓN ================= -->
+<div id="c1" class="screen">
+<h2>📱 Comunicación - Explicación</h2>
+<div class="box">
+Antes cartas 📜 ahora comunicación digital 🌐
+</div>
+<button onclick="go('c2')">➡ Nivel 1</button>
+</div>
+
+<div id="c2" class="screen">
+<h2>📱 Nivel 1</h2>
+
+<div class="card" onclick="ok(this,3)">📜 Carta</div>
+<div class="card" onclick="bad(this)">📱 Celular</div>
+<div class="card" onclick="bad(this)">💻 Internet</div>
+<div class="card" onclick="ok(this,3)">🐎 Mensajero</div>
+
+<button onclick="go('c3')">➡ Emparejar</button>
+</div>
+
+<div id="c3" class="screen">
+<h2>📱 Nivel 2 - Emparejar</h2>
+
+<div class="row">
+<div class="card" onclick="pair(this,'ant')">📜 Carta</div>
+<div class="card" onclick="pair(this,'mod')">📱 WhatsApp</div>
+<div class="card" onclick="pair(this,'ant')">🐎 Mensajero</div>
+<div class="card" onclick="pair(this,'mod')">🌐 Internet</div>
+<div class="card" onclick="pair(this,'mod')">📡 Red digital</div>
+<div class="card" onclick="pair(this,'ant')">📦 Envío físico</div>
+</div>
+
+<button onclick="go('c4')">➡ Nivel 3</button>
+</div>
+
+<div id="c4" class="screen">
+<h2>📱 Nivel 3</h2>
+
+<div class="card" onclick="ok(this,3)">🌐 Comunicación rápida</div>
+<div class="card" onclick="bad(this)">📦 Lenta</div>
+
+<button onclick="go('c5')">➡ Nivel 4</button>
+</div>
+
+<div id="c5" class="screen">
+<h2>📱 Nivel 4</h2>
+
+<div class="card" onclick="ok(this,3)">📱 Tecnología digital</div>
+<div class="card" onclick="bad(this)">📜 Solo papel</div>
+
+<button onclick="go('t1')">➡ Siguiente</button>
+</div>
+
+<!-- ================= 4 TRANSPORTE ================= -->
+<div id="t1" class="screen">
+<h2>🚗 Transporte - Explicación</h2>
+<div class="box">
+Antes animales 🐎 ahora transporte moderno 🚗✈️
+</div>
+<button onclick="go('t2')">➡ Nivel 1</button>
+</div>
+
+<div id="t2" class="screen">
+<h2>🚗 Nivel 1</h2>
+
+<div class="card" onclick="ok(this,4)">🐎 Caballo</div>
+<div class="card" onclick="bad(this)">🚗 Carro</div>
+<div class="card" onclick="bad(this)">✈️ Avión</div>
+<div class="card" onclick="ok(this,4)">🚶 Caminata</div>
+
+<button onclick="go('t3')">➡ Emparejar</button>
+</div>
+
+<div id="t3" class="screen">
+<h2>🚗 Nivel 2 - Emparejar</h2>
+
+<div class="row">
+<div class="card" onclick="pair(this,'ant')">🐎 Caballo</div>
+<div class="card" onclick="pair(this,'mod')">🚗 Auto</div>
+<div class="card" onclick="pair(this,'ant')">🚶 Pie</div>
+<div class="card" onclick="pair(this,'mod')">✈️ Avión</div>
+<div class="card" onclick="pair(this,'mod')">🚀 Futuro</div>
+<div class="card" onclick="pair(this,'ant')">🪨 Sin motor</div>
+</div>
+
+<button onclick="go('t4')">➡ Nivel 3</button>
+</div>
+
+<div id="t4" class="screen">
+<h2>🚗 Nivel 3</h2>
+
+<div class="card" onclick="ok(this,4)">✈️ Más rápido</div>
+<div class="card" onclick="bad(this)">🐎 Más lento</div>
+
+<button onclick="go('t5')">➡ Nivel 4</button>
+</div>
+
+<div id="t5" class="screen">
+<h2>🚗 Nivel 4</h2>
+
+<div class="card" onclick="ok(this,4)">🚗 Tecnología en movilidad</div>
+<div class="card" onclick="bad(this)">🚶 Sin evolución</div>
+
+<button onclick="go('v1x')">➡ Siguiente</button>
+</div>
+
+<!-- ================= 5 VIVIENDA ================= -->
+<div id="v1x" class="screen">
+<h2>🏠 Vivienda - Explicación</h2>
+<div class="box">
+Antes chozas 🛖 ahora casas inteligentes 🏠🤖
+</div>
+<button onclick="go('v2x')">➡ Nivel 1</button>
+</div>
+
+<div id="v2x" class="screen">
+<h2>🏠 Nivel 1</h2>
+
+<div class="card" onclick="ok(this,5)">🛖 Choza</div>
+<div class="card" onclick="bad(this)">🏢 Edificio</div>
+<div class="card" onclick="ok(this,5)">🌿 Natural</div>
+
+<button onclick="go('v3x')">➡ Emparejar</button>
+</div>
+
+<div id="v3x" class="screen">
+<h2>🏠 Nivel 2 - Emparejar</h2>
+
+<div class="row">
+<div class="card" onclick="pair(this,'ant')">🛖 Choza</div>
+<div class="card" onclick="pair(this,'mod')">🏡 Casa</div>
+<div class="card" onclick="pair(this,'ant')">🌿 Natural</div>
+<div class="card" onclick="pair(this,'mod')">🏢 Moderna</div>
+<div class="card" onclick="pair(this,'mod')">🤖 Inteligente</div>
+<div class="card" onclick="pair(this,'ant')">⛺ Básica</div>
+</div>
+
+<button onclick="go('v4x')">➡ Nivel 3</button>
+</div>
+
+<div id="v4x" class="screen">
+<h2>🏠 Nivel 3</h2>
+
+<div class="card" onclick="ok(this,5)">🏠 Evolución real</div>
+<div class="card" onclick="bad(this)">🪨 Sin cambio</div>
+
+<button onclick="go('final')">🏁 Final</button>
+</div>
+
+<!-- ================= FINAL ================= -->
+<div id="final" class="screen">
+<h1>🎉 MISIÓN COMPLETADA</h1>
+<h2>🏆 Puntos: <span id="score">0</span></h2>
+<button onclick="location.reload()">🔁 Reiniciar</button>
+</div>
+
+<script>
+
+let score=0;
+let selected=[];
+
+function go(id){
+document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+function ok(el,t){
+score+=10;
+el.style.background="lightgreen";
+el.style.pointerEvents="none";
+document.getElementById("score").innerText=score;
+}
+
+function bad(el){
+el.style.background="salmon";
+el.style.pointerEvents="none";
+}
+
+function pair(el,type){
+el.classList.toggle("selected");
+selected.push({el,type});
+
+if(selected.length==2){
+let a=selected[0], b=selected[1];
+
+if(a.type===b.type){
+a.el.style.background="lightgreen";
+b.el.style.background="lightgreen";
+score+=20;
+}else{
+a.el.style.background="salmon";
+b.el.style.background="salmon";
+}
+selected=[];
+document.getElementById("score").innerText=score;
+}
+}
+
+</script>
+
+</body>
+</html>
